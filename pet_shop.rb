@@ -26,7 +26,7 @@ def pets_by_breed(pet_shop, breed)
   breed_array = []
   for pet in pet_shop[:pets]
     if pet[:breed] == breed
-      breed_array << pet
+      breed_array.push(pet)
     end
   end
   return breed_array
@@ -41,3 +41,11 @@ def find_pet_by_name(pet_shop, pet_name)
   return nil
 end
 
+def remove_pet_by_name(pet_shop, pet_name)
+  for pet in pet_shop[:pets]
+    if pet[:name] == pet_name
+      pet_shop[:pets].delete(pet)
+    end
+  end
+  return pet
+end
